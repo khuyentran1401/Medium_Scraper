@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 import re
 import pandas as pd
 import time
+from pyvirtualdisplay import Display
 
 
 
@@ -35,6 +36,8 @@ def get_end_date(year, month, day):
 
 def open_chrome():
     #OPENS A CHROME DRIVER
+    display = Display(visible=0, size=(800, 800))
+    display.start()
     driver = webdriver.Chrome()
     driver.implicitly_wait(30)
     return driver

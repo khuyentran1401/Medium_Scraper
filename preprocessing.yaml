@@ -1,0 +1,29 @@
+# data
+
+dataset:
+    data: medium.csv
+
+pipeline:
+    pipeline01: xgboost
+
+target:
+    target: Claps
+
+variables:
+    drop_features: ['url', 'Author_url', 'Author']
+
+    frequent_features: ['Publication', 'Author']
+
+    impute_numerical_vars: ['Publication_count']
+
+    impute_categorical_vars: ['Publication', 'Subtitle']
+
+    text_features: ['Title', 'Subtitle']
+
+xgboost_params:
+    learning_rate: 0.08 
+    colsample_bytree: 0.7
+    min_child_weight: 1.0 
+    max_depth: 15
+    n_estimators: 300
+
